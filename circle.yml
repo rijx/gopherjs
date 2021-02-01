@@ -15,7 +15,7 @@ jobs:
     - run: echo 'export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"' >> $BASH_ENV
     - run: go get -t -d -v ./...
     - run: go install -v
-    - run: npm install # Install our (dev) dependencies from package.json.
+    - run: npm ci # Install our (dev) dependencies from package.json.
     - run: npm install --global node-gyp
     - run: cd node-syscall && node-gyp rebuild && mkdir -p ~/.node_libraries && cp build/Release/syscall.node ~/.node_libraries/syscall.node
 
